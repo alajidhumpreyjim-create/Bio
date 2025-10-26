@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PROTOTYPE Presentation Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style1.css">
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:800,600,400&display=swap" rel="stylesheet">
+  <script>
+    function showFullImage(src) {
+      document.getElementById('fullsize-image').src = src;
+      document.getElementById('photo-lightbox').style.display = 'block';
+    }
+
+    // Video player functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainVideo = document.getElementById('mainVideo');
+      const buttons = document.querySelectorAll('.vid-thumb');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const videoSrc = this.getAttribute('data-src');
+          mainVideo.src = videoSrc;
+          mainVideo.load();
+          mainVideo.play();
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="main-title">Bio</h1>
+      <h2 class="subtitle">PRESENTATION DESIGN</h2>
+      <hr class="divider">
+      <h3 class="desc"><span>PROFESSIONAL PRESENTATION WITH MODERN DESIGN</span></h3>
+      
+    </div>
+  </header>
+
+  <main>
+    <section class="slides-gallery">
+      <div class="slide-row">
+        <div class="slide large-slide" style="background-image:url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80');">
+          <div class="slide-content dark">
+            <h4> About me</h4>
+            <p>I’m Humprey Jim Develos Alajid a college student at Lapu-Lapu City College, just an ordinary one  not the top of the class, but not the worst either. I consider myself a mediocre student, someone who’s still figuring things out. There are times I get motivated and do well, but there are also days when I just feel tired or lost.
+
+Even though I’m not the best, I try my best. I know that learning isn’t only about grades; it’s about growing, improving, and understanding myself more each day. Being a student here has taught me patience, responsibility, and the importance of small progress..</p>
+          </div>
+        </div>
+        <div class="slide small-slide photo-grid">
+          <div class="slide-content">
+            <h4>Photos</h4> 
+            <div class="photo-grid-container">
+              <!-- Add your photos here. Each img should be square, ideally 150x150px -->
+              <img class="thumb" src="humprey.jpeg.jpg" alt="Personal photo 1" onclick="showFullImage(this.src)">
+              <img class="thumb" src="devs.jpg" alt="Personal photo 2" onclick="showFullImage(this.src)">
+              <img class="thumb" src="wiggy.JPG" alt="Personal photo 3" onclick="showFullImage(this.src)">
+              <img class="thumb" src="oscar.jpg" alt="Personal photo 4" onclick="showFullImage(this.src)">
+            </div>
+          </div>
+          <!-- Lightbox for full-size image view -->
+          <div id="photo-lightbox" class="lightbox" onclick="this.style.display='none'">
+            <img id="fullsize-image" src="" alt="Full size photo">
+          </div>
+        </div>
+        <div class="slide small-slide video-slide">
+          <div class="slide-content">
+            <h4>Videos</h4>
+            <div class="video-container">
+              <!-- Main player -->
+              <video id="mainVideo" class="video-player" controls preload="metadata">
+                <source id="mainSource" src="video2.mp4" type="video/mp4">
+              
+                Your browser does not support the video tag.
+              </video>
+              
+
+        
+            
+              
+              
+          </div>
+        </div>
+      </div>
+      <div class="slide-row">
+        <div class="slide small-slide" style="background-image:url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80');">
+          <div class="slide-content dark">
+            <h4>Digital <span class="slide-accent">Innovation</span></h4>
+          </div>
+        </div>
+        <div class="slide small-slide" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80');">
+          <div class="slide-content">
+            <h4>Tech <span class="slide-accent">Future</span></h4>
+          </div>
+        </div>
+        <div class="slide small-slide" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80');">
+          <div class="slide-content">
+            <h4>Data <span class="slide-accent">Vision</span></h4>
+          </div>
+        </div>
+        <div class="slide small-slide" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=400&q=80');">
+          <div class="slide-content">
+            <h4>Code <span class="slide-accent">Future</span></h4>
